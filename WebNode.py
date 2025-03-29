@@ -7,6 +7,8 @@ import sys
 import argparse
 import socket
 import threading
+import random
+import string
 
 # Add tqdm for progress bar
 try:
@@ -42,7 +44,16 @@ CAMERA_FOLDER = os.path.join(ROOT, args.images)
 OUTPUT_FOLDER = os.path.join(ROOT, args.output)
 
 TEMP_DIR = f'{ROOT}temp'
-BATCH_FILE = f'{TEMP_DIR}/rc_commands.bat'  
+#name batch file with a unique name to avoid conflicts based on the machine name
+MACHINE_NAME = socket.gethostname()
+#randomize the batch file name to avoid conflicts
+
+def random_string(length=8):
+    """Generate a random string of fixed length."""
+    letters = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters) for i in range(length))
+BATCH_FILE = f'{TEMP_DIR}/{MACHINE_NAME}_{random_string()}.bat'
+  
 
 PORT = args.port  # Port for server communication
 IP = args.ip  # IP address for server communication
