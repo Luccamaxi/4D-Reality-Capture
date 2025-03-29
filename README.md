@@ -12,32 +12,43 @@ This project automates the processing of 4D scenes in **RealityCapture** using i
 - **Interchangeable Image Formats**: Works with multiple image formats for flexibility.
 
 ## Dependencies
-- **RealityCapture CLI**
-- **Python** (for worker scripts)
-- **Node.js** (for master node management)
+- **RealityCapture**
+- **Python** (I used 3.10)
 - **A shared network folder** (required for distributed processing)
 
+## Folder Structure
+If you have different names make sure to reference them via relaive Paths see how with 
+
+   ```sh
+   python ./WebNode.py --help
+   ```
+
+   ```sh
+   M:\
+   │── images\        # Folder containing multi image sequences
+      |──frame_0000\  # Folder containing camera images 
+      ...
+   │── scene\         # Scene-related files
+   │── scene.rcproj   # RealityCapture project file
+   │── output\        # Folder for processed outputs
+   ```
+
+This keeps it readable and structured for your GitHub documentation. Let me know if you want any adjustments! 🚀
+
 ## Installation
-1. Clone this repository:
+Clone this repository:
    ```sh
    git clone https://github.com/yourusername/realitycapture-4d-processor.git
    cd realitycapture-4d-processor
    ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt  # Install Python dependencies
-   npm install  # Install Node.js dependencies
-   ```
-3. Set up your RealityCapture CLI path in the config file.
-
 ## Usage
 - **Master Node**: Run the master script to manage distributed processing.
   ```sh
-  node master.js
+  python ./WebNode.py --server --root M:/ # REPLACE WITH YOUR NETWORK FOLDER
   ```
 - **Worker Node**: Run the worker script on each processing machine.
   ```sh
-  python worker.py
+  python ./WebNode.py --node -ip 192.168.178.22 -r M: # REPLACE WITH YOUR IP AND NETWORK FOLDER
   ```
 
 ## RealityCapture Setup
