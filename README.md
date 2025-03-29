@@ -7,9 +7,8 @@ This project automates the processing of 4D scenes in **RealityCapture** using i
 - **Automated RealityCapture Processing**: The program reads pre-registered camera data and injects image sequences frame-by-frame.
 - **High-Quality Model Processing**: Runs RealityCapture with high settings and generates textures.
 - **Distributed Processing Support**: Multiple worker nodes can run RealityCapture in parallel.
-- **Master Node Monitoring**: A central dashboard tracks all worker nodes, displaying processing status and stats.
+- **Master Node Monitoring**: A central dashboard tracks all worker nodes, displaying processing status.
 - **Networked Storage**: All RealityCapture project files must reside in a **networked folder** to enable seamless distributed processing.
-- **Interchangeable Image Formats**: Works with multiple image formats for flexibility.
 
 ## Dependencies
 - **RealityCapture**
@@ -17,13 +16,13 @@ This project automates the processing of 4D scenes in **RealityCapture** using i
 - **A shared network folder** (required for distributed processing)
 
 ## Folder Structure
-If you have different names make sure to reference them via relaive Paths see how with 
+If you have different names make sure to reference them via relaive paths see how with:
 
    ```sh
    python ./WebNode.py --help
    ```
 
-   ```sh
+   ```markdown
    M:\
    │── images\        # Folder containing multi image sequences
       |──frame_0000\  # Folder containing camera images 
@@ -32,8 +31,6 @@ If you have different names make sure to reference them via relaive Paths see ho
    │── scene.rcproj   # RealityCapture project file
    │── output\        # Folder for processed outputs
    ```
-
-This keeps it readable and structured for your GitHub documentation. Let me know if you want any adjustments! 🚀
 
 ## Installation
 Clone this repository:
