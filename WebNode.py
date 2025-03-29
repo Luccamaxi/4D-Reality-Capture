@@ -24,12 +24,12 @@ parser = argparse.ArgumentParser(description="Process RealityCapture project fil
 parser.add_argument('-s', '--server', action='store_true', help='Run in server mode')
 parser.add_argument('-n', '--node', action='store_true', help='Run in node mode')
 parser.add_argument('--port', type=int, default=5000, help='Port for server communication')
-parser.add_argument('-ip', type=str, default='0.0.0.0', help='IP address for server communication')
+parser.add_argument('-ip', type=str, default='0.0.0.0', help='IP address for server communication (Only used for node. Enter the server IP)')
 parser.add_argument('-rc', '--realitycapture', type=str, required=False, default="C:\\Program Files\\Capturing Reality\\RealityCapture\\RealityCapture.exe", help='Path to RealityCapture executable')
 parser.add_argument('-r', '--root', type=str, required=True, help='Project folder path')
 parser.add_argument('-p', '--project', type=str, required=False, default='scan.rcproj', help='Path to RealityCapture project file')
-parser.add_argument('-i', '--images', type=str, required=False, default='images', help='Path to camera folder')
-parser.add_argument('-o', '--output', type=str, required=False, default='output', help='Path to output folder')
+parser.add_argument('-i', '--images', type=str, required=False, default='images', help='Relative path to image folder')
+parser.add_argument('-o', '--output', type=str, required=False, default='output', help='Relative path to output folder')
 args = parser.parse_args()
 
 RC_PATH = args.realitycapture
