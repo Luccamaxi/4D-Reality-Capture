@@ -23,7 +23,7 @@ If you have different names make sure to reference them via relaive paths see ho
    ```
 
    ```markdown
-   M:\
+   M:\                # Network Drive/Folder
    │── images\        # Folder containing multi image sequences
       |──frame_0000\  # Folder containing camera images 
       ...
@@ -39,11 +39,21 @@ Clone this repository:
    cd realitycapture-4d-processor
    ```
 ## Usage
-- **Master Node**: Run the master script to manage distributed processing.
+
+**Create Folder Structure**: 
+Put all images in the images folder. If needed use the "camera_to_frames.py" tool to create subfolders per frame if you have images sorted by your camera instead of the individual frames
+
+**Create Peality Capture Project**: 
+Imprt you first frame into RC, align all images and adjust the reconstruction region.
+Save the file in your project folder
+
+- **Server**: Run WebNode.py -s to manage distributed processing.
   ```sh
   python ./WebNode.py --server --root M:/ # REPLACE WITH YOUR NETWORK FOLDER
   ```
-- **Worker Node**: Run the worker script on each processing machine.
+  
+- **Node**: Run WebNode.py -n on each processing machine.
+  I like to create a batch file for that that lies in the network folder.
   ```sh
   python ./WebNode.py --node -ip 192.168.178.22 -r M: # REPLACE WITH YOUR IP AND NETWORK FOLDER
   ```
