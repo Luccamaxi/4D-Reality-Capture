@@ -41,7 +41,7 @@ Clone this repository:
 ## Usage
 
 **Create Folder Structure**: 
-Put all images in the images folder. If needed use the "camera_to_frames.py" tool to create subfolders per frame if you have images sorted by your camera instead of the individual frames
+To sort your images into the rigth format use the "camera_to_frames.py" tool to create subfolders per frame if you have images sorted by your camera instead of the individual frames
 
 **Create Peality Capture Project**: 
 Imprt you first frame into RC, align all images and adjust the reconstruction region.
