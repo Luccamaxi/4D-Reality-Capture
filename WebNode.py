@@ -97,9 +97,10 @@ def copy_project_to_temp(frame_number):
     # Format the frame folder name
     frame_folder = f"frame_{int(frame_number):05d}"
     source_frame_path = os.path.join(CAMERA_FOLDER, "Sequence", frame_folder)
+
     
     # Preserve original folder structure in temp location
-    temp_cropped_dir = os.path.join(frame_subfolder, "cropped")
+    temp_cropped_dir = os.path.join(frame_subfolder, args.images)
     temp_sequence_path = os.path.join(temp_cropped_dir, "Sequence")
     temp_frame_path = os.path.join(temp_sequence_path, frame_folder)
     
