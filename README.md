@@ -23,13 +23,14 @@ If you have different names make sure to reference them via relaive paths see ho
    ```
 
    ```markdown
-   M:\                # Network Drive/Folder
-   │── images\        # Folder containing multi image sequences
-      |──frame_0000\  # Folder containing camera images 
-      ...
-   │── scene\         # Scene-related files
-   │── scene.rcproj   # RealityCapture project file
-   │── output\        # Folder for processed outputs
+   M:\                    # Network Drive/Folder
+   │── images\
+      │──Sequence          # Folder containing multi image sequences
+          |──frame_0000\   # Folder containing camera images 
+          ...
+   │── scene\             # Scene-related files
+   │── scene.rcproj       # RealityCapture project file
+   │── output\            # Folder for processed outputs
    ```
 
 ## Installation
